@@ -63,7 +63,6 @@ class HBNBCommand(cmd.Cmd):
         """Creates a new instance"""
         if arg:
             if arg in self.classes:
-                # instance = models.base_model.BaseModel()
                 get_class = getattr(sys.modules[__name__], arg)
                 instance = get_class()
                 print(instance.id)
