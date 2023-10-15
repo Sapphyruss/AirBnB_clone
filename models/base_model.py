@@ -2,7 +2,7 @@
 """BaseModel Class."""
 import models
 import datetime
-from uuid import uuid4
+import uuid
 
 
 class BaseModel:
@@ -40,6 +40,6 @@ class BaseModel:
         """Returns a dictionary will all keys and values of the instance."""
         bmdict = self.__dict__.copy()
         bmdict["created_at"] = self.created_at.isoformat()
-        bmdict["updated_at"] = self.created_at.isoformat()
+        bmdict["updated_at"] = self.updated_at.isoformat()
         bmdict["__class__"] = self.__class__.__name__
         return bmdict
