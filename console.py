@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the HBnB console."""
+"""The console."""
 import cmd
 import re
 from shlex import split
@@ -11,7 +11,7 @@ from models.city import City
 from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
-
+import sys
 
 class HBNBCommand(cmd.Cmd):
     """Defines the HolbertonBnB command interpreter.
@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Creates a new instance"""
-        if ar:
+        if arg:
             if arg in self.classes:
                 # instance = models.base_model.BaseModel()
                 get_class = getattr(sys.modules[__name__], arg)
