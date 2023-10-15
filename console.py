@@ -13,6 +13,7 @@ from models.amenity import Amenity
 from models.review import Review
 import sys
 
+
 class HBNBCommand(cmd.Cmd):
     """Defines the HolbertonBnB command interpreter.
     Attributes:
@@ -117,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
         tida = shlex.split(arg)
         lst = []
         dic = models.storage.all()
-    
+
         if len(tida) == 0:
             for k in dic:
                 rep_Class = str(dic[k])
