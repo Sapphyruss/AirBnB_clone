@@ -2,8 +2,8 @@
 """The console."""
 import cmd
 import re
-from shlex import split
-from models import storage
+import shlex
+import models
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -20,15 +20,9 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb) "
-    __classes = {
-        "BaseModel",
-        "User",
-        "State",
-        "City",
-        "Place",
-        "Amenity",
-        "Review"
-    }
+    classes = {'BaseModel': BaseModel, 'Amenity': Amenity,
+               'State': State, 'Place': Place, 'Review': Review,
+               'User': User, 'City': City}
 
     def default(self, arg):
         """Default cmd"""
